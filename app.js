@@ -94,11 +94,12 @@
     });
     const tl_food = gsap.timeline({
         scrollTrigger: {
-            trigger: '.food__wrapper',
+            trigger: '.food__list',
             markers: true,
             start: 'top 70%',
             end: 'top+=30%',
             scrub: 1,
+            // pin: '.food__gallery',
         }
     });
     const food_images = document.querySelectorAll('.food__image')

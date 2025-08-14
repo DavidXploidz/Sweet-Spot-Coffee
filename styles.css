@@ -211,10 +211,10 @@ p{
         & p {
             display: flex;
             align-items: center;
-            flex-wrap: wrap;
             justify-content: space-between;
             gap: 10px;
             font-size: var(--step--1);
+            margin-top: 1rem;
         }
         & span{
             font-size: var(--step-3);
@@ -222,10 +222,14 @@ p{
     }
 }
 .food__gallery{
-    position: relative;
+    position: sticky;
+    top: 2rem;
+    left: 0;
 }
 .food__image{
     position: absolute;
     aspect-ratio: 4 / 3;
+    max-height: 40rem;
+    width: 100%;
     border-radius: 20px;
 }
