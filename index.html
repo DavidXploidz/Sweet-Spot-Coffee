@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sweet Spot Coffee</title>
+    <link rel="stylesheet" href="./styles.css">
+</head>
+<body>
+    <header class="header container text-primary">
+        <p>Oupsi- juste trop bon.</p>
+        <p>8a rue blainville ouest, sainte-thererese.</p>
+        <p>(514) 978-KREM</p>
+    </header>
+    <main class="hero">
+        <div class="hero__wrapper container">
+            <h1 class="fs-5 hero__title text-primary">Comptoir <span class="block">Krem & <span class="block">kanel</span></span></h1>
+            <figure>
+                <img id="hero-image" src="./assets/images/hero.avif" alt="image hero cinnamorool">
+            </figure>
+        </div>
+        <svg class="hero__wave" id="wave_1" viewBox="0 0 1440 390" xmlns="http://www.w3.org/2000/svg">
+            <path d="M 0,400 L 0,150 C 133.75,132.96428571428572 267.5,115.92857142857143 383,120 C 498.5,124.07142857142857 595.7499999999999,149.25 700,169 C 804.2500000000001,188.75 915.5,203.07142857142858 1040,199 C 1164.5,194.92857142857142 1302.25,172.46428571428572 1440,150 L 1440,400 L 0,400 Z" stroke="none" stroke-width="0" fill="#f2e6bd" fill-opacity="1"></path>
+            <path id="wave_shape_1" d="M 0,400 L 0,150 C 107.71428571428572,144.39285714285714 215.42857142857144,138.78571428571428 321,158 C 426.57142857142856,177.21428571428572 529.9999999999999,221.25000000000003 667,216 C 804.0000000000001,210.74999999999997 974.5714285714287,156.21428571428572 1109,137 C 1243.4285714285713,117.78571428571429 1341.7142857142858,133.89285714285714 1440,150 L 1440,400 L 0,400 Z" stroke="none" stroke-width="0" fill="#f2e6bd" fill-opacity="1"></path>
+            <path id="wave_shape_2" d="M 0,400 L 0,150 C 144.96428571428572,166.32142857142856 289.92857142857144,182.64285714285714 415,163 C 540.0714285714286,143.35714285714286 645.2500000000001,87.75 758,79 C 870.7499999999999,70.25 991.0714285714284,108.35714285714286 1106,128 C 1220.9285714285716,147.64285714285714 1330.4642857142858,148.82142857142856 1440,150 L 1440,400 L 0,400 Z" stroke="none" stroke-width="0" fill="#f2e6bd" fill-opacity="1"></path>
+        </svg>
+        <svg class="hero__wave" id="wave_2" viewBox="0 0 1440 390" xmlns="http://www.w3.org/2000/svg">
+            <path d="M 0,400 L 0,150 C 106.35714285714286,142.14285714285714 212.71428571428572,134.28571428571428 338,145 C 463.2857142857143,155.71428571428572 607.5000000000001,185 738,201 C 868.4999999999999,217 985.2857142857142,219.71428571428572 1100,209 C 1214.7142857142858,198.28571428571428 1327.357142857143,174.14285714285714 1440,150 L 1440,400 L 0,400 Z" stroke="none" stroke-width="0" fill="#d3b371" fill-opacity="1"></path>
+            <path id="wave_shape_3" d="M 0,400 L 0,150 C 120.32142857142858,172.46428571428572 240.64285714285717,194.92857142857142 362,207 C 483.35714285714283,219.07142857142858 605.7499999999999,220.74999999999997 718,216 C 830.2500000000001,211.25000000000003 932.3571428571429,200.07142857142858 1051,188 C 1169.642857142857,175.92857142857142 1304.8214285714284,162.96428571428572 1440,150 L 1440,400 L 0,400 Z" stroke="none" stroke-width="0" fill="#d3b371" fill-opacity="1"></path>
+            <path id="wave_shape_4" d="M 0,400 L 0,150 C 94.57142857142861,160.53571428571428 189.14285714285722,171.07142857142858 301,173 C 412.8571428571428,174.92857142857142 541.9999999999998,168.25 690,173 C 838.0000000000002,177.75 1004.8571428571429,193.92857142857142 1133,192 C 1261.142857142857,190.07142857142858 1350.5714285714284,170.03571428571428 1440,150 L 1440,400 L 0,400 Z" stroke="none" stroke-width="0" fill="#d3b371" fill-opacity="1"></path>
+        </svg>
+    </main>
+    <section class="schedule">
+        <h2 class="schedule__title fs-4 text-secondary">Heures d'ouverture</h2>
+        <div class="schedule__cards"></div>
+    </section>
+    <section class="food">
+        <div class="food__wrapper container text-secondary">
+            <div>
+                <h2 class="fs-6" id="food-title-key">Tout chaud</h2>
+                <p class="fs-4" id="food-subtitle-key">Nos Brioches Signatures</p>
+                <ul class="food__list">
+                    <li>
+                        Classique
+                        <p>Glaçage fromage crème vanille <span>6,00$</span></p>
+                    </li>
+                    <li>
+                        Pistache
+                        <p>Beurre de pistache, pistaches et crumble <span>7,50$</span></p>
+                    </li>
+                    <li>
+                        Spéculoos
+                        <p>Crémeux de spéculoos, crumble de biscuit <span>7,00$</span></p>
+                    </li>
+                </ul>
+            </div>
+            <div class="food__gallery">
+                <img class="food__image" src="./assets/images/food_1.avif" alt="">
+                <img class="food__image" src="./assets/images/food_2.avif" alt="">
+                <img class="food__image" src="./assets/images/food_3.avif" alt="">
+            </div>
+        </div>
+    </section>
+    <footer>
+
+    </footer>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/gsap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/MorphSVGPlugin.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/ScrollTrigger.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/SplitText.min.js"></script>
+    <script src="./app.js"></script>
+</body>
+</html>

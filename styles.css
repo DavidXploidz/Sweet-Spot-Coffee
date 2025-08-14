@@ -1,0 +1,231 @@
+@font-face {
+  font-family: 'alfaslabone';
+  font-weight: 400;
+    src:  
+        url('assets/fonts/alfaslabone-regular-webfont.woff2') format('woff2'),
+        url('assets/fonts/alfaslabone-regular-webfont.woff') format('woff');
+}
+:root{
+    /* Pallete color */
+    --black: #252525;
+    --white: #FAFAFA;
+    --clr-primary: #784b29;
+    --clr-primary-light: #9b663a;
+    --clr-secondary: #f2e6bd;
+    --clr-accent: #ff760d;
+    --clr-bg: #f5f4f0;
+    /* Fonts */
+    --ff: "alfaslabone", sans-serif;
+    --step--3: clamp(0.576rem, 0.5796rem + -0.0047vw, 0.5787rem);
+    --step--2: clamp(0.6944rem, 0.6856rem + 0.0444vw, 0.72rem);
+    --step--1: clamp(0.8333rem, 0.8101rem + 0.1159vw, 0.9rem);
+    --step-0: clamp(1rem, 0.9565rem + 0.2174vw, 1.125rem);
+    --step-1: clamp(1.2rem, 1.1283rem + 0.3587vw, 1.4063rem);
+    --step-2: clamp(1.44rem, 1.3295rem + 0.5527vw, 1.7578rem);
+    --step-3: clamp(1.728rem, 1.5648rem + 0.8161vw, 2.1973rem);
+    --step-4: clamp(2.0736rem, 1.8395rem + 1.1704vw, 2.7466rem);
+    --step-5: clamp(2.4883rem, 2.1597rem + 1.6433vw, 3.4332rem);
+    --step-6: clamp(2.986rem, 2.5319rem + 2.2705vw, 4.2915rem);
+    /* Utilities */
+    --transition: 0.3s ease-in-out;
+    --shadow-sm: 0 1px 3px 0 rgb(0 0 0 / 0.1), 0 1px 2px -1px rgb(0 0 0 / 0.1);
+}
+/* apply a natural box layout model to all elements, but allowing components to change */
+html {
+    box-sizing: border-box;
+  }
+  *, *:before, *:after {
+    box-sizing: inherit;
+}
+*{
+    margin: 0;
+    padding: 0;
+    font: inherit;
+}
+body{
+    font-size: var(--step-0);
+    font-family: var(--ff);
+    min-height: 100vh;
+    background-color: var(--clr-bg);
+}
+img, picture, svg, video{
+    display: block;
+    max-width: 100%;
+}
+input, textarea, button, select{
+    font: inherit;
+}
+.fs--3{
+    font-size: var(--step--3);
+}
+.fs--2{
+    font-size: var(--step--2);
+}
+.fs--1{
+    font-size: var(--step--1);
+}
+.fs-base{
+    font-size: var(--step-0);
+}
+.fs-1{
+    font-size: var(--step-1);
+}
+.fs-2{
+    font-size: var(--step-2);
+}
+.fs-3{
+    font-size: var(--step-3);
+}
+.fs-4{
+    font-size: var(--step-4);
+}
+.fs-5{
+    font-size: var(--step-5);
+}
+.fs-6{
+    font-size: var(--step-6);
+}
+.text-primary{
+    color: var(--clr-primary);
+}
+.text-secondary{
+    color: var(--clr-secondary);
+}
+:is(h1, h2, h3){
+  text-wrap: balance;
+}
+p{
+    font: var(--step-0);
+    text-wrap: balance;
+}
+/* Utilities */
+.container{
+    width: min(90%, 120rem);
+    margin-inline: auto;
+}
+.grid{
+    display: grid;
+    gap: 1rem;
+    grid-template-columns: repeat(auto-fit,minmax(min(400px, 100%), 1fr));
+}
+.shadow-sm{
+    box-shadow: var(--shadow-sm);
+}
+/* header styles */
+.header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-weight: 600;
+    font-size: var(--step-1);
+    padding-block: 1rem;
+    min-height: 90px;
+}
+.hero{
+    height: calc(100dvh - 90px);
+    position: relative;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(2, 50%);
+    overflow: clip;
+}
+.hero__wrapper{
+    display: grid;
+    align-items: center;
+    grid-template-columns: 2fr 1fr;
+	grid-area: 1/1/2/4;
+    z-index: 2;
+}
+.hero__wave{
+    grid-area: 2/1/3/4;
+}
+.hero__title{
+    font-size: clamp(4rem, 2.9565rem + 5.2174vw, 7rem);
+    text-transform: uppercase;
+    & .block{
+        display: block;
+    }
+}
+#wave_shape_1, #wave_shape_2 , #wave_shape_3, #wave_shape_4{
+    visibility: hidden;
+}
+/* schedule styles */
+.schedule{
+    padding-block: 3rem;
+    background-color: var(--clr-primary);
+    min-height: 100dvh;
+    overflow: clip;
+}
+.schedule__title{
+    text-align: center;
+    margin-bottom: 2rem;
+}
+.schedule__cards{
+    display: grid;
+}
+.schedule__card{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 10px;
+    background-color: #bed9eb;
+    border-radius: 20px;
+    width: min(90%, 40rem);
+    margin-inline: auto;
+    padding: 1rem;
+    color: var(--clr-primary);
+    & p {
+        font-size: var(--step-6);
+    }
+    & span{
+        font-size: var(--step-2);
+    }
+}
+.schedule__card:nth-of-type(even){
+    background-color: #ffdbc6;
+}
+/* food section */
+.food{
+    background-color: var(--clr-primary);
+    padding-block: 3rem;
+}
+.food__wrapper{
+    border-radius: 20px;
+    background-color: var(--clr-primary-light);
+    padding: 2rem;
+    display: grid;
+    align-items: start;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+    /* grid-template-columns: 1fr auto; */
+}
+.food__list{
+    list-style: none;
+    display: grid;
+    margin-top: 2rem;
+    & li{
+        border-top: 1px solid var(--clr-secondary);
+        padding-block: 1rem;
+        font-size: var(--step-1);
+        & p {
+            display: flex;
+            align-items: center;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            gap: 10px;
+            font-size: var(--step--1);
+        }
+        & span{
+            font-size: var(--step-3);
+        }
+    }
+}
+.food__gallery{
+    position: relative;
+}
+.food__image{
+    position: absolute;
+    aspect-ratio: 4 / 3;
+    border-radius: 20px;
+}
