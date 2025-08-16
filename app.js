@@ -70,7 +70,7 @@
                 ease: "elastic",
                 scrollTrigger: {
                     trigger: ".food__wrapper",
-                    toggleActions: "play pause reset reset",
+                    toggleActions: "play pause none reset",
                 }
             });
         }
@@ -87,7 +87,7 @@
                 ease: "elastic",
                 scrollTrigger: {
                     trigger: ".food__wrapper",
-                    toggleActions: "play pause reset reset",
+                    toggleActions: "play pause none reset",
                 }
             });
         }
@@ -95,7 +95,7 @@
     const tl_food = gsap.timeline({
         scrollTrigger: {
             trigger: '.food__list',
-            markers: true,
+            markers: false,
             start: 'top 70%',
             end: 'top+=30%',
             scrub: 1,
@@ -111,37 +111,55 @@
             tl_food.from(item, { scale: 0 })
         }
     }
+    const tl_drinks = gsap.timeline({
+        scrollTrigger: {
+            trigger: '.drinks__list',
+            markers: false,
+            start: 'top 70%',
+            end: 'top+=30%',
+            scrub: 1,
+        }
+    });
+    const drinks_images = document.querySelectorAll('.drinks__image')
+    for(let i = 0; i < drinks_images.length; i++){
+        const item = drinks_images[i];
+        if(i % 2){
+            tl_drinks.from(item, { scale: 0 })
+        }else{
+            tl_drinks.from(item, { scale: 0 })
+        }
+    }
  });
 
  function generateCards(){
     const scheduleWrapper = document.querySelector('.schedule__cards');
     const schedule = [
         {
-            day: 'Lun',
+            day: 'Mon',
             hours: 'Cerrado'
         },
         {
-            day: 'Mar',
+            day: 'Tue',
             hours: '08:00 - 22:30'
         },
         {
-            day: 'Mier',
+            day: 'Wed',
             hours: '08:00 - 22:30'
         },
         {
-            day: 'Jue',
+            day: 'Thu',
             hours: '08:00 - 22:30'
         },
         {
-            day: 'Vie',
+            day: 'Fri',
             hours: '08:00 - 22:30'
         },
         {
-            day: 'Sab',
+            day: 'Sat',
             hours: '08:00 - 22:30'
         },
         {
-            day: 'Dom',
+            day: 'Sun',
             hours: '08:00 - 22:30'
         },
     ];
