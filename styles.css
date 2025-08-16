@@ -30,6 +30,7 @@
     /* Utilities */
     --transition: 0.3s ease-in-out;
     --shadow-sm: 0 1px 3px 0 rgb(0 0 0 / 0.1), 0 1px 2px -1px rgb(0 0 0 / 0.1);
+    --rounded-lg: 1.5rem;
 }
 /* apply a natural box layout model to all elements, but allowing components to change */
 html {
@@ -47,7 +48,7 @@ body{
     font-size: var(--step-0);
     font-family: var(--ff);
     min-height: 100vh;
-    background-color: var(--clr-bg);
+    background-color: var(--clr-primary);
 }
 img, picture, svg, video{
     display: block;
@@ -112,15 +113,21 @@ p{
 .shadow-sm{
     box-shadow: var(--shadow-sm);
 }
+.rounded-lg{
+    border-radius: 2rem;
+}
 /* header styles */
 .header{
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
     font-weight: 600;
     font-size: var(--step-1);
     padding-block: 1rem;
     min-height: 90px;
+    background-color: var(--clr-bg);
+}
+.header__wrapper{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
 .hero{
     height: calc(100dvh - 90px);
@@ -129,6 +136,7 @@ p{
     grid-template-columns: repeat(3, 1fr);
     grid-template-rows: repeat(2, 50%);
     overflow: clip;
+    background-color: var(--clr-bg);
 }
 .hero__wrapper{
     display: grid;
@@ -171,7 +179,7 @@ p{
     flex-wrap: wrap;
     gap: 10px;
     background-color: #bed9eb;
-    border-radius: 20px;
+    border-radius: var(--rounded-lg);
     width: min(90%, 40rem);
     margin-inline: auto;
     padding: 1rem;
@@ -192,7 +200,7 @@ p{
     padding-block: 3rem;
 }
 .food__wrapper, .drinks__wrapper{
-    border-radius: 20px;
+    border-radius: var(--rounded-lg);
     background-color: var(--clr-primary-light);
     padding: 2rem;
     display: grid;
@@ -234,11 +242,26 @@ p{
     aspect-ratio: 4 / 3;
     max-height: 40rem;
     width: 100%;
-    border-radius: 20px;
+    border-radius: var(--rounded-lg);
 }
 .drinks__wrapper{
     background-color: var(--clr-accent-alt);
 }
 .drinks__list li{
     border-top: 1px solid var(--clr-primary);
+}
+/* scatter section styles */
+.scatter{
+    min-height: 100dvh;
+    background-color: var(--clr-primary-light);
+    padding-block: 3rem;
+    padding-inline: clamp(1rem, 1.5vw, 2rem);
+    border-radius: var(--rounded-lg);
+    color: #ffdbc6;
+    display: grid;
+    place-items: center;
+}
+.scatter__title{
+    text-align: center;
+    font-size: clamp(4.5rem, 4.1957rem + 1.5217vw, 5.375rem);
 }

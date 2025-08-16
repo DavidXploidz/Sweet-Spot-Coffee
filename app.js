@@ -129,6 +129,43 @@
             tl_drinks.from(item, { scale: 0 })
         }
     }
+    // Scatter section message
+    // let split = SplitText.create(".scatter__title", {
+    //     type: "words, lines",
+    //     lineClass: "line",
+    //     wordClass: "word",
+    //     charClass: "char",
+    //     autoSplit: true
+    // })
+    // gsap.from(split.scatter__title, {
+    //     yPercent: 20,
+    //     opacity: 0,
+    //     stagger: 0.05,
+    //     duration: 3,
+    //     repeat: -1
+    // })
+    SplitText.create(".scatter__title", {
+        type: "words, chars",
+        onSplit(self) {
+            gsap.from(self.chars, {
+                yPercent: "random([-100, 100])",
+                duration: 1.5, 
+                y: 50, 
+                autoAlpha: 0, 
+                stagger: {
+                    amount: 0.5,
+                    from: "random",
+                },
+                ease: "elastic",
+                scrollTrigger: {
+                    trigger: ".scatter",
+                    toggleActions: "play pause none reverse",
+                    markers: false,
+                    start: 'top 40%',
+                }
+            });
+        }
+    });
  });
 
  function generateCards(){
