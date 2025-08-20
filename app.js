@@ -70,7 +70,7 @@
                 ease: "elastic",
                 scrollTrigger: {
                     trigger: ".food__wrapper",
-                    toggleActions: "play pause none reset",
+                    toggleActions: "play resume none reset",
                 }
             });
         }
@@ -87,11 +87,15 @@
                 ease: "elastic",
                 scrollTrigger: {
                     trigger: ".food__wrapper",
-                    toggleActions: "play pause none reset",
+                    toggleActions: "play resume none reset",
                 }
             });
         }
     });
+        
+    animatedSplitText('food-title-key', 'food__wrapper', { y: 50 });
+    animatedSplitText('food-subtitle-key', 'food__wrapper', { delay: 0.7, y: 30 });
+
     const tl_food = gsap.timeline({
         scrollTrigger: {
             trigger: '.food__list',
@@ -102,7 +106,7 @@
             // pin: '.food__gallery',
         }
     });
-    const food_images = document.querySelectorAll('.food__image')
+    const food_images = document.querySelectorAll('.food__image');
     for(let i = 0; i < food_images.length; i++){
         const item = food_images[i];
         if(i % 2){
@@ -111,6 +115,10 @@
             tl_food.from(item, { scale: 0 })
         }
     }
+
+    animatedSplitText('drinks-title-key', 'drinks__wrapper', { y: 50 });
+    animatedSplitText('drinks-subtitle-key', 'drinks__wrapper', { delay: 0.7, y: 30 });
+
     const tl_drinks = gsap.timeline({
         scrollTrigger: {
             trigger: '.drinks__list',
@@ -120,7 +128,7 @@
             scrub: 1,
         }
     });
-    const drinks_images = document.querySelectorAll('.drinks__image')
+    const drinks_images = document.querySelectorAll('.drinks__image');
     for(let i = 0; i < drinks_images.length; i++){
         const item = drinks_images[i];
         if(i % 2){
@@ -129,21 +137,6 @@
             tl_drinks.from(item, { scale: 0 })
         }
     }
-    // Scatter section message
-    // let split = SplitText.create(".scatter__title", {
-    //     type: "words, lines",
-    //     lineClass: "line",
-    //     wordClass: "word",
-    //     charClass: "char",
-    //     autoSplit: true
-    // })
-    // gsap.from(split.scatter__title, {
-    //     yPercent: 20,
-    //     opacity: 0,
-    //     stagger: 0.05,
-    //     duration: 3,
-    //     repeat: -1
-    // })
     SplitText.create(".scatter__title", {
         type: "words, chars",
         onSplit(self) {
@@ -211,4 +204,25 @@
         card.appendChild(hours)
         scheduleWrapper.appendChild(card);
     })
+ }
+
+ function animatedSplitText(idSelector, trigger, options = {} ){
+    const { delay = 0, y = 50 } = options;
+    SplitText.create(`#${idSelector}`, {
+        type: "words, chars",
+        onSplit(self) {
+            gsap.from(self.chars, {
+                duration: 2, 
+                delay,
+                y,
+                autoAlpha: 0, 
+                stagger: 0.05,
+                ease: "elastic",
+                scrollTrigger: {
+                    trigger: `.${trigger}`,
+                    toggleActions: "play resume none reset",
+                }
+            });
+        }
+    });
  }
