@@ -265,3 +265,16 @@ p{
     text-align: center;
     font-size: clamp(4.5rem, 4.1957rem + 1.5217vw, 5.375rem);
 }
+/* footer styles */
+.footer{
+    background-color: var(--clr-primary);
+    padding-block: 3rem;
+}
+.footer__wrapper{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    & * {
+        flex: 1;
+    }
+}
