@@ -24,6 +24,7 @@
         }, 
         repeat: -1, 
         yoyo: true, 
+        delay: 1,
         repeatDelay: 0.7}, 
     );
     // Para textos animados
@@ -161,16 +162,22 @@
     });
     const tl_about = gsap.timeline({
         scrollTrigger: {
-            trigger: '.about',
+            trigger: '.about__wrapper',
             markers: false,
             start: 'top 70%',
-            end: 'top+=30%',
+            end: 'top 30%',
             scrub: 1,
         }
     });
+    tl_about.from('.about__image', {
+        autoAlpha: 0,
+        filter: 'blur(5px)',
+        x: -100,
+    })
     tl_about.from('.about__info > *', {
         autoAlpha: 0,
-        y: -40,
+        filter: 'blur(5px)',
+        y: -50,
         delay: 0.5,
         ease: "power2.out",
         stagger: 0.2,
