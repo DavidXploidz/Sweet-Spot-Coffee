@@ -152,12 +152,28 @@
                 ease: "elastic",
                 scrollTrigger: {
                     trigger: ".scatter",
-                    toggleActions: "play pause none reverse",
+                    toggleActions: "play resume none reverse",
                     markers: false,
                     start: 'top 40%',
                 }
             });
         }
+    });
+    const tl_about = gsap.timeline({
+        scrollTrigger: {
+            trigger: '.about',
+            markers: false,
+            start: 'top 70%',
+            end: 'top+=30%',
+            scrub: 1,
+        }
+    });
+    tl_about.from('.about__info > *', {
+        autoAlpha: 0,
+        y: -40,
+        delay: 0.5,
+        ease: "power2.out",
+        stagger: 0.2,
     });
  });
 

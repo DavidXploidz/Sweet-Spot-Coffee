@@ -5,6 +5,13 @@
         url('assets/fonts/alfaslabone-regular-webfont.woff2') format('woff2'),
         url('assets/fonts/alfaslabone-regular-webfont.woff') format('woff');
 }
+@font-face {
+  font-family: 'opansans';
+  font-weight: 400;
+    src:  
+        url('assets/fonts/opensans-variablefont-webfont.woff2') format('woff2'),
+        url('assets/fonts/opensans-variablefont-webfont.woff') format('woff');
+}
 :root{
     /* Pallete color */
     --black: #252525;
@@ -17,6 +24,7 @@
     --clr-bg: #f5f4f0;
     /* Fonts */
     --ff: "alfaslabone", sans-serif;
+    --opensans: "opensans", sans-serif;
     --step--3: clamp(0.576rem, 0.5796rem + -0.0047vw, 0.5787rem);
     --step--2: clamp(0.6944rem, 0.6856rem + 0.0444vw, 0.72rem);
     --step--1: clamp(0.8333rem, 0.8101rem + 0.1159vw, 0.9rem);
@@ -92,6 +100,12 @@ input, textarea, button, select{
 }
 .text-secondary{
     color: var(--clr-secondary);
+}
+.text-accent{
+    color: var(--clr-accent);
+}
+.font-opensans{
+    font-family: var(--opensans);
 }
 :is(h1, h2, h3){
   text-wrap: balance;
@@ -226,9 +240,11 @@ p{
             gap: 10px;
             font-size: var(--step--1);
             margin-top: 1rem;
+            font-family: var(--opensans);
         }
         & span{
             font-size: var(--step-3);
+            font-family: var(--ff);
         }
     }
 }
@@ -264,6 +280,21 @@ p{
 .scatter__title{
     text-align: center;
     font-size: clamp(4.5rem, 4.1957rem + 1.5217vw, 5.375rem);
+}
+.about{
+    background-color: var(--clr-bg);
+}
+.about__wrapper{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    align-items: flex-start;
+    gap: 3rem;
+}
+.about__info{
+    display: grid;
+    align-items: start;
+    row-gap: 1rem;
+    color: var(--clr-primary);
 }
 /* footer styles */
 .footer{
