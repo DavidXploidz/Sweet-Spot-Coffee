@@ -177,11 +177,28 @@
     tl_about.from('.about__info > *', {
         autoAlpha: 0,
         filter: 'blur(5px)',
-        y: -50,
+        x: -50,
         delay: 0.5,
         ease: "power2.out",
         stagger: 0.2,
     });
+    const tl_footer = gsap.timeline({
+        scrollTrigger: {
+            trigger: '.footer',
+            markers: false,
+            start: 'top 70%',
+            end: 'top 30%',
+            toggleActions: "play resume none reverse",
+        }
+    });
+    tl_footer.from('.footer__grid > * ', {
+        autoAlpha: 0,
+        x: -50,
+        filter: 'blur(5px)',
+        stagger: 0.3,
+        delay: 0.5,
+        ease: "power2.out",
+    })
  });
 
  function generateCards(){

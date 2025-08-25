@@ -112,7 +112,7 @@ input, textarea, button, select{
 }
 p{
     font: var(--step-0);
-    text-wrap: balance;
+    text-wrap: pretty;
 }
 /* Utilities */
 .container {
@@ -131,7 +131,7 @@ p{
 /* xl */
 @media (max-width: 1280px) {
   .container {
-    max-width: 1024px;
+    max-width: 1140px;
   }
 }
 /* lg */
@@ -336,7 +336,7 @@ p{
     color: var(--clr-primary);
 }
 .about__image{
-    aspect-ratio: 4 / 3;
+    /* aspect-ratio: 4 / 3; */
     object-fit: cover;
     max-height: 40rem;
     height: auto;
@@ -346,6 +346,18 @@ p{
 .footer{
     background-color: var(--clr-primary);
     padding-block: 3rem;
+}
+.footer__grid{
+    display: grid;
+    gap: 2rem;
+    grid-template-columns: repeat(auto-fit,minmax(min(250px, 100%), 1fr));
+    margin-bottom: 3rem;
+    & img{
+        height: 100%;
+        max-height: 30rem;
+        object-fit: cover;
+    }
+    /* grid-template-columns: repeat(3, 1fr); */
 }
 .footer__wrapper{
     display: flex;
